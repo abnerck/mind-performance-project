@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+const html=fs.readFileSync('dist/index.html','utf8');
+const references=[...html.matchAll(/(?:src|href)="([^"]+)"/g)].map(x=>x[1]);
+const missing=references.filter(x=>!x.startsWith('#')&&!fs.existsSync('dist/'+x));
+if(missing.length)throw Error('Missing assets: '+missing.join(', '));
+new vm.Script(fs.readFileSync('dist/app.js','utf8'));
+const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
+if(ids.length!==new Set(ids).size)throw Error('Duplicate IDs');
+for(const name of ['nunito.ttf','playfair.ttf','playfair-italic.ttf'])if(!fs.existsSync('dist/assets/'+name))throw Error('Missing font: '+name);
+console.log('PASS: local assets, fonts, unique HTML IDs and JavaScript syntax.');
