@@ -17,12 +17,43 @@ nav{gap:24px}header{gap:24px}.brand{font-size:15px}.brand small{font-size:10px;l
 summary{grid-template-columns:70px 1fr 30px}.hero{min-height:650px;max-height:900px}.hero h1{font-size:clamp(70px,9vw,140px)}.hero-content{width:100%}.hero .button{margin-top:20px}.intro-columns{grid-template-columns:1fr;max-width:800px;gap:8px}.intro-columns p{max-width:72ch}.journey{padding-top:65px}.empty-rule{height:1px;background:#b2817370;margin-top:55px}.subpage{min-height:75vh}.retreat-page{padding-top:160px}.retreat-heading{max-width:1100px;margin:0 auto 48px;border-bottom:1px solid #ffffff20;padding-bottom:32px}.retreat-heading h1{font-size:clamp(44px,5.5vw,76px);margin-bottom:0}.retreat-composition{max-width:1100px;margin:0 auto}.retreat-landscape{width:100%;max-width:none;margin:0;padding:clamp(18px,3vw,38px);background:linear-gradient(135deg,#223a44,#172b34);border:1px solid #b2817340;border-radius:6px;box-shadow:0 24px 70px #07151b40}.retreat-image-frame{max-width:828px;margin:0 auto;overflow:hidden;border:1px solid #ffffff18;border-radius:2px;box-shadow:0 8px 28px #07151b50}.retreat-landscape img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:contain;border-radius:0}.retreat-copy{margin-top:64px;padding-top:34px;border-top:1px solid #ffffff25;display:grid;grid-template-columns:1fr 1.8fr;gap:clamp(30px,5vw,75px)}.retreat-copy h2{font-size:clamp(30px,3vw,42px);margin:14px 0 0}.retreat-copy p{font-size:18px;line-height:1.9;color:#bcc8ce;margin:0 0 25px;max-width:68ch}.footer-top{padding-bottom:24px}
 @media(max-width:700px){summary{grid-template-columns:25px 1fr 22px}.hero{min-height:650px}.hero h1{font-size:clamp(58px,15vw,100px)}.hero-content{padding-bottom:90px}.retreat-page{padding-top:130px}.retreat-heading{margin-bottom:28px;padding-bottom:26px}.retreat-heading h1{font-size:43px}.retreat-landscape{padding:14px}.retreat-copy{grid-template-columns:1fr;gap:24px;margin-top:36px;padding-top:28px}.retreat-copy p{font-size:18px}.retreat-copy h2{font-size:32px}.intro-columns{grid-template-columns:1fr}}
 
-/* Original identity becomes the central composition on the home page. */
-.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
-.hero:has(.hero-brand-content){min-height:760px;height:auto;max-height:none}
-.hero-brand-content{display:flex;flex-direction:column;align-items:center;padding:165px 8% 75px;gap:34px}
-.hero-brand-frame{position:relative;width:100%;max-width:1040px;margin:0;padding:clamp(12px,2vw,24px);border:1px solid #b281735c;border-radius:7px;background:linear-gradient(135deg,#31505b66,#14262eaa);box-shadow:0 30px 90px #08151c70,inset 0 1px 0 #ffffff12}
-.hero-brand-frame img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:contain;border-radius:3px;border:1px solid #ffffff14}
-.hero-brand-content .button{margin-top:0;min-width:180px;justify-content:space-between}
-.retreat-composition .retreat-copy{margin-top:0;padding-top:0;border-top:0}
-@media(max-width:700px){.hero:has(.hero-brand-content){min-height:0}.hero-brand-content{padding:132px 6% 64px;gap:30px}.hero-brand-frame{padding:10px;border-radius:5px}.hero-brand-frame img{border-radius:2px}.hero-brand-content .button{font-size:16px}.retreat-composition .retreat-copy{margin-top:0;padding-top:0}}
+/* Color refinement of the selected design; layout and content stay intact. */
+:root{--night:#12252F;--petrol:#1A303A;--slate:#14262E;--mountain:#1A1C1D;--rock:#221E1D;--sunset:#B28173;--rose:var(--sunset);--white:#FBFCFC}
+body{background:var(--night);color:var(--white)}
+.hero-art{background:radial-gradient(ellipse at 90% 52%,#B2817366 0%,transparent 53%),radial-gradient(ellipse at 55% 10%,#1A303A 0%,transparent 62%),linear-gradient(125deg,var(--night) 25%,var(--slate) 58%,var(--rock))}
+.hero-art:after{background:linear-gradient(90deg,#12252FB8,transparent 82%),linear-gradient(0deg,var(--night),transparent 38%)}
+.ambient-light{background:radial-gradient(ellipse,#B2817340,transparent 68%)}
+.hero h1 em{color:var(--sunset)}
+.button{background:var(--sunset);color:var(--night)}
+.intro{background:var(--petrol);border-top:1px solid #B2817340;border-bottom:1px solid #B2817340}
+.intro .section-label{color:var(--sunset)}
+.journey{background:var(--slate)}
+#chapters{border-radius:4px;overflow:hidden;border:1px solid #B2817333}
+#chapters details{border-top:1px solid #FBFCFC20;padding-left:28px;padding-right:28px}
+#chapters details:first-child{border-top:0}
+#chapters details:last-child{border-bottom:0}
+#socioemocional{background:var(--petrol)}
+#atencion{background:var(--rock)}
+#percepcion{background:var(--slate)}
+#resiliencia{background:var(--mountain)}
+#interdisciplinario{background:var(--rock)}
+#retiro{background:var(--night)}
+#chapters details[open]>summary{color:var(--white)}
+#chapters details[open] .chapter-title{color:var(--sunset)}
+.chapter-num,.chapter-plus{color:var(--sunset)}
+.chapter-content{color:#FBFCFCD9}
+#cursos{background:var(--petrol)}
+#colaboracion{background:var(--rock)}
+.collab-tabs{border-bottom-color:#B2817355}
+.collab-tabs [aria-selected=true]{background:var(--sunset);color:var(--night);border-bottom-color:var(--sunset);border-radius:3px 3px 0 0;padding-left:22px;padding-right:22px}
+.oversized{color:var(--sunset);opacity:.7}
+.retreat-page{background:var(--mountain)}
+.retreat-heading{border-bottom-color:var(--sunset)}
+.retreat-copy h2{color:var(--sunset)}
+.retreat-landscape{background:var(--rock);border-color:#B2817370}
+.retreat-image-frame{border-color:#B2817340}
+footer{background:var(--rock);border-top:1px solid #B2817340}
+.footer-bottom{border-top-color:#B2817340}
+.footer-top a{color:var(--white)}
+.empty-rule{background:var(--sunset)}
+@media(max-width:700px){#chapters details{padding-left:16px;padding-right:16px}nav{background:var(--slate);border-bottom-color:var(--sunset)}.collab-tabs [aria-selected=true]{padding-left:14px;padding-right:14px}}
